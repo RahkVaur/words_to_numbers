@@ -13,6 +13,10 @@
 
 #include "utils.h"
 
+/**
+ * Anonymous namespace makes variables and methods inside it
+ * visible only to this translation unit
+ */
 namespace
 {
 	std::set<char> two_side_special_ch = {
@@ -26,24 +30,25 @@ namespace
 	};
 }
 
-inline void ltrim( std::string& word )
+
+void ltrim( std::string& string )
 {
-	word.erase( word.begin(), std::find_if( word.begin(), word.end(), []( unsigned char c ) {
-		return !std::isgraph( c );
+	string.erase( string.begin(), std::find_if( string.begin(), string.end(), []( unsigned char c ) {
+		return std::isgraph( c );
 	} ) );
 }
 
-inline void rtrim( std::string& word )
+void rtrim( std::string& string )
 {
-	word.erase( std::find_if( word.rbegin(), word.rend(), []( unsigned char c ) {
-		return !std::isgraph( c );
-	} ).base(), word.end() );
+	string.erase( std::find_if( string.rbegin(), string.rend(), []( unsigned char c ) {
+		return std::isgraph( c );
+	} ).base(), string.end() );
 }
 
-inline void trim( std::string& word )
+void trim( std::string& string )
 {
-	ltrim( word );
-	rtrim( word );
+	ltrim( string );
+	rtrim( string );
 }
 
 void split_special_ch( const std::string& word, std::vector<std::string>& split_text )

@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "converter.h"
+#include "utils.h"
 
 int main( int argc, char* argv[] )
 {
@@ -12,8 +13,10 @@ int main( int argc, char* argv[] )
     }
     else
     {
-        const std::string in_string = argv[1];
+        std::string in_string = argv[1];
         std::string out_string;
+
+        trim( in_string );
 
         try
         {
@@ -26,7 +29,6 @@ int main( int argc, char* argv[] )
             std::cerr << e.what() << std::endl;
         }
     }
-
 
 	return 0;
 }

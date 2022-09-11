@@ -91,6 +91,19 @@ std::set<std::string> num_connectors = {
     "-"
 };
 
+/**
+ * @brief
+ * This function takes a vector of strings, searches for the 
+ * numbers written in text form and transforms them into their
+ * numeric counterpart, leaving the rest untouched.
+ * 
+ * @param[in] in_vector Input vector of strings.
+ * @param[out] out_vector Output vector of strings.
+ * 
+ * @return void
+ * 
+ * @exception Throws runtime error when a number is greater than 10^9
+ */
 void words2numbers( const std::vector<std::string>& in_vector, std::vector<std::string>& out_vector )
 {
     uint32_t number = 0;

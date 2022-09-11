@@ -1,1 +1,4 @@
 # words_to_numbers
+This program takes a text containing numbers in written format, like 'one hundred and one' and 'twenty-five thousand, three hundred and two' and transforms them into their numeric counterpart, '101' and '25302' respectively. It leaves the other words intact, so if the input 'I have nine hundred and six euros' is entered, the resulting text will be 'I have 906 euros'.
+
+The program is compiled with cmake. The build folder is where the executable is compiled and where the 'cmake' instruction should be executed, pointing to the CMakeLists.txt file. It also includes several test, that are executed when running the 'ctest' or 'make test' instrucions inside the build folder.
